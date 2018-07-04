@@ -12,7 +12,7 @@ line= LINE(LINE_EMAIL, LINE_PASS)
 
 oepoll = OEPoll(line)
 
-prohibitedWords = ['Asu', 'Jancuk', 'Tai']
+prohibitedWords = ['GOBLOK', 'KONTOL', 'MEMEK']
 userTemp = {}
 userKicked = []
 
@@ -38,7 +38,7 @@ def TERIMA_PESAN(op):
                     if userTemp.get(sender) > 3:
                         userKicked.append(sender)
                         line.kickoutFromGroup(receiver, userKicked)
-                        line.log("{} telah terkick dari grup".format(displayName))
+                        line.log("{} telah terkick dari grup karena mengucapkan kata terlarang lebih dari 3x".format(displayName))
                         userTemp.pop(sender)
                 else:
                     userTemp[sender] = 1
